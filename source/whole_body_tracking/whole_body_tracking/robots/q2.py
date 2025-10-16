@@ -117,7 +117,7 @@ Q2_CYLINDER_CFG = ArticulationCfg(
         #     armature=2.0 * ROBSTRIDE_02,
         # ),
         "waist_yaw": ImplicitActuatorCfg(
-            effort_limit_sim=140,
+            effort_limit_sim=120,
             velocity_limit_sim=30.0,
             joint_names_expr=["torso_joint"],
             stiffness=STIFFNESS_04,

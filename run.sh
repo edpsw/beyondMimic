@@ -81,6 +81,10 @@ aslk/q2/runs/beqoml6z
 python scripts/rsl_rl/play.py --task=Tracking-Flat-Q2-Wo-State-Estimation-v0 --num_envs=2 \
 --wandb_path=aslk/q2/runs/u8o26zr7
 
+python scripts/rsl_rl/play.py --task=Tracking-Flat-Q2-Wo-State-Estimation-v0 --num_envs=2 \
+--motion_file ../../../artifacts/dance1_subject2:v3/motion.npz \
+--load_run 2025-10-16_13-49-59 \
+--checkpoint model_11500.pt \
 
 
 
@@ -100,3 +104,9 @@ git clone https://github.com/leggedrobotics/rsl_rl.git
 cd rsl_rl
 git checkout v1.0.2
 pip install -e .
+
+
+
+# joint_stiffness: 157.914,157.914,157.914,157.914,157.914,78.957,78.957,157.914,157.914,16.581,16.581,157.914,157.914,16.581,16.581,33.162,33.162,16.581,16.581
+# joint_damping: 10.053,10.053,10.053,10.053,10.053,5.027,5.027,10.053,10.053,1.056,1.056,10.053,10.053,1.056,1.056,2.111,2.111,1.056,1.056
+# default_joint_pos: -0.332,-0.332,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,-0.000,0.524,0.524,0.000,0.000,-0.192,-0.192,0.000,0.000

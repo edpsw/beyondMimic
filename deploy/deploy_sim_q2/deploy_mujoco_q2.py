@@ -192,7 +192,7 @@ def pd_control(target_q, q, kp, target_dq, dq, kd):
 
 
 joint_xml = [
-        "left_hip_pitch_joint",
+    "left_hip_pitch_joint",
     "left_hip_roll_joint",
     "left_hip_yaw_joint",
     "left_knee_joint",
