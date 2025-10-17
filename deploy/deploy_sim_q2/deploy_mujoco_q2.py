@@ -18,9 +18,9 @@ xml_path = "/home/z/code/beyondMimic/source/whole_body_tracking/whole_body_track
 # Total simulation time
 simulation_duration = 300.0
 # Simulation time step
-simulation_dt = 0.002
+simulation_dt = 0.005
 # Controller update frequency (meets the requirement of simulation_dt * controll_decimation=0.02; 50Hz)
-control_decimation = 10
+control_decimation = 4
 def quat_rotate_inverse_np(q: np.ndarray, v: np.ndarray) -> np.ndarray:
     """Rotate a vector by the inverse of a quaternion along the last dimension of q and v (NumPy version).
 

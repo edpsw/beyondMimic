@@ -12,13 +12,14 @@ python scripts/csv_to_npz_q2.py \
 
 
 #play data
-
+#g1
 python scripts/replay_npz.py --registry_name=asdlkj/wandb-registry-motions/dance1_subject2
 
+#q2
 
 python scripts/replay_npz_q2.py --registry_name=asdlkj/wandb-registry-motions/dance1_subject2
 
-python scripts/replay_npz_q2.py --registry_name=asdlkj/wandb-registry-motions/dance1_subject1
+
 
 
 
@@ -56,6 +57,8 @@ python scripts/rsl_rl/train.py --task=Tracking-Flat-G1-v0 \
 # Tracking-Flat-Q2-Wo-State-Estimation-v0  
 # Tracking-Flat-Q2-v0   
 # Tracking-Flat-Q2-Low-Freq-v0
+
+
 
 python scripts/rsl_rl/train.py --task=Tracking-Flat-Q2-Wo-State-Estimation-v0 \
 --registry_name asdlkj/wandb-registry-motions/dance1_subject2 \

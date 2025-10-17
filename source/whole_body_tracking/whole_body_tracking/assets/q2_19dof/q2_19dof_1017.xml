@@ -18,9 +18,10 @@
 
   <compiler angle="radian" />
   
-  <option timestep='0.005' iterations='50' solver='PGS' gravity='0 0 -9.81'>
+  <option timestep='0.002'  iterations='50' solver='PGS' gravity='0 0 -9.81'>
       <flag frictionloss="enable"/>
   </option>
+
 
   <asset>
     <!-- <material name="" rgba="0.89804 0.91765 0.92941 1" /> -->
