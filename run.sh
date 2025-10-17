@@ -3,10 +3,12 @@ python scripts/csv_to_npz.py \
 --input_file /home/z/code/data/LAFAN1_Visualize/g1/dance1_subject2.csv \
 --input_fps 30 --output_name dance1_subject2 --headless
 
+python csv_to_npz.py --input_file /home/z/code/data/LAFAN1_Visualize/q2_19dof/dance1_subject2.csv --input_fps 30 --frame_range 122 722 \
+    --output_file ./motions/dance1_subject2.npz --output_fps 50
 
 python scripts/csv_to_npz_q2.py \
 --input_file /home/z/code/data/LAFAN1_Visualize/q2_19dof/dance1_subject2.csv \
---input_fps 30 --output_name dance1_subject2 --headless
+--input_fps 30 --output_name dance1_subject2 --headless --frame_range 1 810
 
 
 #play data
@@ -66,25 +68,24 @@ python scripts/rsl_rl/train.py --task=Tracking-Flat-Q2-Wo-State-Estimation-v0 \
 python scripts/rsl_rl/play.py --task=Tracking-Flat-G1-v0 --num_envs=2 \
 --wandb_path=aslk/g1/runs/04jjmfnr
 
-aslk/g1/runs/833gtibo
-aslk/g1/runs/04jjmfnr
-
-
 python scripts/rsl_rl/play.py --task=Tracking-Flat-Q2-v0 --num_envs=2 \
---wandb_path=aslk/q2/runs/ti6qp0v2
-
-shmlu2f1
-gnck22rf
-aslk/q2/runs/beqoml6z
+--wandb_path=aslk/q2/runs/
 
 
-python scripts/rsl_rl/play.py --task=Tracking-Flat-Q2-Wo-State-Estimation-v0 --num_envs=2 \
---wandb_path=aslk/q2/runs/u8o26zr7
+
+
+###############################################################
 
 python scripts/rsl_rl/play.py --task=Tracking-Flat-Q2-Wo-State-Estimation-v0 --num_envs=2 \
---motion_file ../../../artifacts/dance1_subject2:v3/motion.npz \
---load_run 2025-10-16_13-49-59 \
---checkpoint model_11500.pt \
+--wandb_path=aslk/q2/runs/u8o26zr7  #3000
+
+6q78u2pz #810
+u8o26zr7
+
+# python scripts/rsl_rl/play.py --task=Tracking-Flat-Q2-Wo-State-Estimation-v0 --num_envs=2 \
+# --motion_file assets/motions/motion.npz \
+# --load_run 2025-10-16_13-49-59 \
+# --checkpoint model_11500.pt \
 
 
 
@@ -110,3 +111,11 @@ pip install -e .
 # joint_stiffness: 157.914,157.914,157.914,157.914,157.914,78.957,78.957,157.914,157.914,16.581,16.581,157.914,157.914,16.581,16.581,33.162,33.162,16.581,16.581
 # joint_damping: 10.053,10.053,10.053,10.053,10.053,5.027,5.027,10.053,10.053,1.056,1.056,10.053,10.053,1.056,1.056,2.111,2.111,1.056,1.056
 # default_joint_pos: -0.332,-0.332,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,-0.000,0.524,0.524,0.000,0.000,-0.192,-0.192,0.000,0.000
+
+
+00: 低速端等效惯量0.001kgm2   
+01 02：低速端等效惯量4.2e-3 kg*m2     
+03：低速端等效惯量0.02kgm2   
+04：低速端等效惯量0.04 kg*m2  
+05：低速端等效惯量0.0007kgm2   
+06：低速端等效惯量0.012kgm2

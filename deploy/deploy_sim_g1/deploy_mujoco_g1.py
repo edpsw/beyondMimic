@@ -342,6 +342,7 @@ if __name__ == "__main__":
                 motioninput = np.concatenate((motioninputpos[timestep,:],motioninputvel[timestep,:]),axis=0)
                 motionposcurrent = motionpos[timestep,9,:]
                 motionquatcurrent = motionquat[timestep,9,:]
+                # print(motionquat[timestep,:,:].shape)
                 anchor_quat = subtract_frame_transforms_mujoco(position,quaternion,motionposcurrent,motionquatcurrent,init_to_world)[1]
                 anchor_ori = np.zeros(9)
                 mujoco.mju_quat2Mat(anchor_ori, anchor_quat)

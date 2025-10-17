@@ -294,14 +294,14 @@ if __name__ == "__main__":
     action_buffer = np.zeros((num_actions,), dtype=np.float32)
     timestep = 0
     motioninput = np.concatenate((motioninputpos[timestep,:],motioninputvel[timestep,:]), axis=0)
-    motionposcurrent = motionpos[timestep,9,:]
-    motionquatcurrent = motionquat[timestep,9,:]
+    motionposcurrent = motionpos[timestep,3,:]
+    motionquatcurrent = motionquat[timestep,3,:]
     target_dof_pos = joint_pos_array.copy()
-    d.qpos[2] = 0.8
+    d.qpos[2] = 0.76
     d.qpos[7:] = target_dof_pos
     # target_dof_pos = joint_pos_array_seq
-    body_name = "torso_link"  # robot_ref_body_index=3 motion_ref_body_index=7
-    # body_name = "pelvis"
+    # body_name = "torso_link"  # robot_ref_body_index=3 motion_ref_body_index=7
+    body_name = "pelvis"
     body_id = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, body_name)
     if body_id == -1:
         raise ValueError(f"Body {body_name} not found in model")
@@ -339,8 +339,10 @@ if __name__ == "__main__":
                 position = d.xpos[body_id]
                 quaternion = d.xquat[body_id]
                 motioninput = np.concatenate((motioninputpos[timestep,:],motioninputvel[timestep,:]),axis=0)
-                motionposcurrent = motionpos[timestep,9,:]
-                motionquatcurrent = motionquat[timestep,9,:]
+                motionposcurrent = motionpos[timestep,3,:]
+                
+                motionquatcurrent = motionquat[timestep,3,:]
+                # print(motionquat[timestep,:,:].shape)
                 anchor_quat = subtract_frame_transforms_mujoco(position,quaternion,motionposcurrent,motionquatcurrent,init_to_world)[1]
                 anchor_ori = np.zeros(9)
                 mujoco.mju_quat2Mat(anchor_ori, anchor_quat)

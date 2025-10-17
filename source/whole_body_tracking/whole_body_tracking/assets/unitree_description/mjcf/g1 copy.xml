@@ -364,7 +364,7 @@
         </body>
     </worldbody>
 
-    <contact>
+    <contact>>
         <!-- left foot - floor -->
         <pair name="left_foot1_floor" geom1="left_foot1_collision" geom2="floor" solref="0.01 1" friction="0.8 0.8"/>
         <pair name="left_foot2_floor" geom1="left_foot2_collision" geom2="floor" solref="0.01 1" friction="0.8 0.8"/>
